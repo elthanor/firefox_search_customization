@@ -7,3 +7,4 @@ MOZPATH=${HOME}/.mozilla/firefox/*.default
 cat temp | sed 's|{"template":"https://duckduckgo.com/?q={searchTerms}\&t=canonical","rels":\[\],"resultDomain":"duckduckgo.com","params":\[\]}|{"template":"https://duckduckgo.com","rels":\[\],"resultDomain":"duckduckgo.com","method":"POST","params":\[{"name":"q","value":"{searchTerms}"},{"name":"kae","value":"t"},{"name":"k1","value":"-1"},{"name":"kam","value":"osm"},{"name":"kg","value":"p"},{"name":"k5","value":"1"},{"name":"kaj","value":"m"}\]}|g' > temp2
 ./mozlz4 ./temp2 ./search.json.mozlz4
 mv search.json.mozlz4 ${MOZPATH}
+rm temp temp2
